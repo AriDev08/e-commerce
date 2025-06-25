@@ -12,7 +12,7 @@
 <body>
     <section class=" w-full h-screen" style="background-position: center bottom;  background-image: url('hero.png');">
         <nav class="container mx-auto">
-            <ul class="flex justify-between items-center mt-3 m-5">
+            <ul class="flex justify-between items-center mt-3 m-8">
                 <li>
                     <ul class="flex items-center gap-6">
                         <li class="text-[36px] flex items-center gap-2">
@@ -40,7 +40,7 @@
                             }
                         ?>
                             <a href="<?= $link ?>">
-                                <img class="w-[41px] h-[41px] cursor-pointer " src="user.png" alt="User">
+                                <button class="w-20 h-10 bg-[#757575] rounded-lg">LOGIN</button>
                             </a>
                         </li>
                         <li><img class="w-[36px] h-[36px]" src="search.png" alt=""></li>
@@ -51,7 +51,7 @@
 
         <div class="flex justify-center items-center -ml-24">
             <h1 class="text-[64px] flex justify-center items-center max-w-ms -ml-40 font-bold">Your one-stop Website <span class="mt-40 -ml-110">Maker.</span></h1>
-            <a href="">
+            <a href="checkhout.php">
             <div class="bg-gray-900/30 rounded-lg w-[160px] h-[57px] flex justify-center items-center -ml-46 mt-80 hover:bg-gray-900/20 duration-700">
                 <h1 class="text-[32px]">Customize</h1>
             </div>
@@ -96,7 +96,7 @@
         </div>
         <h1 class="text-[40px] ml-10 mt-5">Your <span class="font-bold">Choice</span></h1>
         <div class="flex gap-20 ml-10">
-            <a href="">
+            <a href="shopping.php">
             <div class="w-[305px] h-[281px]">
                 <div class="bg-[#D4D4D4] w-[305px] h-[180px] rounded-xl"></div>
                 <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
@@ -104,7 +104,7 @@
                  <p>RP.xxx,xxx</p>
             </div>
             </a>
-            <a href="">    
+            <a href="shopping.php">    
             <div class="w-[305px] h-[281px]">
                 <div class="bg-[#D4D4D4] w-[305px] h-[180px] rounded-xl"></div>
                 <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
@@ -131,7 +131,7 @@
         </div>
 
         <!-- BAWAH -->
-        <div class="flex gap-20 mt-5 ml-10">
+        <div class="flex gap-20 mt-10 ml-10">
             <a href="">
         <div class="w-[305px] h-[281px]">
                 <div class="bg-[#D4D4D4] w-[305px] h-[180px] rounded-xl"></div>

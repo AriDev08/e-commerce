@@ -8,11 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
-    <section class=" w-full h-screen">
-
-        <nav class="container mx-auto">
-            <ul class="flex justify-between items-center mt-5">
+<body class="overflow-y-hidden">
+    <nav class="container mx-auto px-8 mt-3">
+            <ul class="flex justify-between items-center">
                 <li>
                     <ul class="flex items-center gap-6">
                         <li class="text-[36px] flex items-center gap-2">
@@ -27,12 +25,13 @@
                     <ul class="flex items-center gap-9">
                         <li><img class="w-[41px] h-[41px]" src="shopping-chart.png" alt=""></li>
                         <li><img class="w-[41px] h-[41px]" src="user.png" alt=""></li>
-                        <li><img class="w-[41px] h-[41px]" src="search.png" alt=""></li>
+                        <li><img class="w-[36px] h-[36px]" src="search.png" alt=""></li>
                     </ul>
                 </li>
             </ul>
         </nav>
-        <section class="w-full h-screen flex justify-center pt-15">
+    <section class=" w-full h-screen">
+        <section class="w-full h-screen flex justify-center">
             <div class="flex flex-col items-center">
                 <svg class="w-[213px] h-[213px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                     fill="currentColor">
@@ -41,7 +40,7 @@
                         clip-rule="evenodd" />
                 </svg>
                 <h1 class="text-[64px] font-semibold">WELCOME</h1>
-                <div class="bg-[#D9D9D9] w-[1230px] h-[501px] p-20 pl-50 rounded-lg mx-auto">
+                <div class="bg-[#D9D9D9] w-[1230px] h-[450px] p-20 pl-50 rounded-lg mx-auto mb-30">
                     <div class="flex text-[40px]">
                         <div class="flex-1 space-y-4">
                             <p><span class="font-bold">Biodata:</span> Biodata</p>
@@ -58,7 +57,7 @@
                         </div>
                     </div>
                     <a href="">
-                            <div class="bg-gray-500 w-60 h-18 rounded-lg ml-74 mt-20 p-5 pl-12">
+                            <div class="bg-gray-500 w-60 h-18 rounded-lg ml-74 p-5 pl-12 mt-3">
                                 <h1 class="font-semibold text-xl">Change Password</h1>
                             </div>
                          </a>
