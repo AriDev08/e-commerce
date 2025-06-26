@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body>
     <section class="w-full h-screen" style="background-position: center bottom; background-image: url('hero.png');">
         <nav class="container mx-auto">
@@ -38,7 +40,7 @@
                             } else {
                                 echo '
                                 <a href="login.php">
-                                    <button class="w-20 h-10 bg-[#757575] text-white rounded-lg">LOGIN</button>
+                                    <button class="w-20 h-10 bg-gray-900/30 text-black font-bold rounded-lg hover:bg-gray-900/20 duration-700">LOGIN</button>
                                 </a>';
                             }
                             ?>
@@ -55,8 +57,9 @@
                 Your one-stop Website <span class="mt-40 -ml-110">Maker.</span>
             </h1>
             <a href="checkhout.php">
-                <div class="bg-gray-900/30 rounded-lg w-[160px] h-[57px] flex justify-center items-center -ml-46 mt-80 hover:bg-gray-900/20 duration-700">
-                    <h1 class="text-[32px]">Customize</h1>
+                <div
+                    class="bg-gray-900/30 rounded-lg w-[160px] h-[57px] flex justify-center items-center -ml-46 mt-80 hover:bg-gray-900/20 duration-700">
+                    <h1 class="text-[30px] font-bold">Customize</h1>
                 </div>
             </a>
         </div>
@@ -65,13 +68,19 @@
         <h1 class="text-[40px] ml-30 pt-3">SUIT YOUR NEEDS</h1>
         <div class="flex gap-20 justify-center items-center pt-4">
             <a href="">
-                <div class="bg-[#757575] w-[350px] h-[600px] text-center pt-70 text-[40px] hover:scale-105 duration-300 hover:bg-[#757575]/50">PORTOFOLIO</div>
+                <div
+                    class="bg-[#757575] w-[350px] h-[600px] text-center pt-70 text-[40px] hover:scale-105 duration-300 hover:bg-[#757575]/50">
+                    PORTOFOLIO</div>
             </a>
             <a href="">
-                <div class="bg-[#757575] w-[350px] h-[600px] text-center pt-70 text-[40px] hover:scale-105 duration-300 hover:bg-[#757575]/50">COMPANY PROFILE</div>
+                <div
+                    class="bg-[#757575] w-[350px] h-[600px] text-center pt-70 text-[40px] hover:scale-105 duration-300 hover:bg-[#757575]/50">
+                    COMPANY PROFILE</div>
             </a>
             <a href="">
-                <div class="bg-[#757575] w-[350px] h-[600px] text-center pt-70 text-[40px] hover:scale-105 duration-300 hover:bg-[#757575]/50">COMMERCIAL</div>
+                <div
+                    class="bg-[#757575] w-[350px] h-[600px] text-center pt-70 text-[40px] hover:scale-105 duration-300 hover:bg-[#757575]/50">
+                    COMMERCIAL</div>
             </a>
         </div>
     </section>
@@ -95,7 +104,7 @@
         <div class="flex gap-20 ml-10">
             <a href="shopping.php">
                 <div class="w-[305px] h-[281px]">
-                    <div class="bg-[#D4D4D4] w-[305px] h-[180px] rounded-xl"></div>
+                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
                     <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
                     <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
                     <p>RP.xxx,xxx</p>
@@ -103,7 +112,7 @@
             </a>
             <a href="shopping.php">
                 <div class="w-[305px] h-[281px]">
-                    <div class="bg-[#D4D4D4] w-[305px] h-[180px] rounded-xl"></div>
+                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
                     <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
                     <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
                     <p>RP.xxx,xxx</p>
@@ -111,7 +120,7 @@
             </a>
             <a href="">
                 <div class="w-[305px] h-[281px]">
-                    <div class="bg-[#D4D4D4] w-[305px] h-[180px] rounded-xl"></div>
+                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
                     <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
                     <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
                     <p>RP.xxx,xxx</p>
@@ -119,7 +128,7 @@
             </a>
             <a href="">
                 <div class="w-[305px] h-[281px]">
-                    <div class="bg-[#D4D4D4] w-[305px] h-[180px] rounded-xl"></div>
+                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
                     <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
                     <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
                     <p>RP.xxx,xxx</p>
@@ -129,7 +138,7 @@
         <div class="flex gap-20 mt-10 ml-10">
             <a href="">
                 <div class="w-[305px] h-[281px]">
-                    <div class="bg-[#D4D4D4] w-[305px] h-[180px] rounded-xl"></div>
+                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
                     <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
                     <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
                     <p>RP.xxx,xxx</p>
@@ -137,7 +146,7 @@
             </a>
             <a href="">
                 <div class="w-[305px] h-[281px]">
-                    <div class="bg-[#D4D4D4] w-[305px] h-[180px] rounded-xl"></div>
+                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
                     <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
                     <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
                     <p>RP.xxx,xxx</p>
@@ -145,7 +154,7 @@
             </a>
             <a href="">
                 <div class="w-[305px] h-[281px]">
-                    <div class="bg-[#D4D4D4] w-[305px] h-[180px] rounded-xl"></div>
+                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
                     <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
                     <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
                     <p>RP.xxx,xxx</p>
@@ -153,7 +162,7 @@
             </a>
             <a href="">
                 <div class="w-[305px] h-[281px]">
-                    <div class="bg-[#D4D4D4] w-[305px] h-[180px] rounded-xl"></div>
+                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
                     <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
                     <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
                     <p>RP.xxx,xxx</p>
@@ -161,5 +170,48 @@
             </a>
         </div>
     </section>
+
+    <section class="w-full h-screen bg-gradient-to-b from-[#B1B1B1] to-[#757575]  mt-50">
+        <div class="flex pl-15 pt-30">
+            <img class="w-[290px] h-[295px]" src="logotim.png" alt="">
+            <div class="bg-black h-80 w-[3px] ml-30"></div>
+            <div class="flex-col text-[40px] pl-20 pt-10">
+                <h1 class="font-bold">Nama Template</h1>
+                <p class="max-w-[500px]">deskripsi template deskripsi templatedeskripsi template</p>
+            </div>
+        </div>
+        <div class="mt-10">
+            <div class="pl-15 pr-15 mt-10 space-y-6">
+                <!-- Baris 1 -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-black w-[63px] h-[63px] rounded-xl"></div>
+                        <h1 class="font-bold text-[32px]">Nama Template</h1>
+                    </div>
+                    <h1 class="font-bold text-[32px]">Nama Template</h1>
+                </div>
+
+                <!-- Baris 2 -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-black w-[63px] h-[63px] rounded-xl"></div>
+                        <h1 class="text-[32px]">Deskripsi Template</h1>
+                    </div>
+                    <h1 class="text-[32px]">Deskripsi Template</h1>
+                </div>
+
+                <!-- Baris 3 -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-black w-[63px] h-[63px] rounded-xl"></div>
+                        <h1 class="text-[32px]">Template</h1>
+                    </div>
+                    <h1 class="text-[32px]">Template</h1>
+                </div>
+            </div>
+
+
+    </section>
 </body>
+
 </html>

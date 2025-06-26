@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="bg-linear-to-r from-cyan-500 to-blue-500">
+<body class="bg-gradient-to-t from-[#FFFFFF] to-[#B1B1B1]">
     <section class="flex justify-center items-center w-full h-screen">
         <form action="proses_login.php" method="POST">
             <div class="w-100 p-6 bg-gray-900/20 shadow-xl/30 rounded-md text-white">
