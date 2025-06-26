@@ -22,5 +22,17 @@
                 <span class="text-[16px] ml-3">Tabel Users</span>
             </div>
         </a>
+        <a href="?page=input_produk" class="block mb-3">
+            <div class="py-2 flex items-center rounded-md px-3 hover:bg-gray-200">
+                <i class="bi bi-database-add text-gray-700"></i>
+                <span class="text-[16px] ml-3">input produk</span>
+            </div>
+        </a>
+        <a href="?page=tampil_order" class="block mb-3">
+            <div class="py-2 flex items-center rounded-md px-3 hover:bg-gray-200">
+                <i class="bi bi-database-add text-gray-700"></i>
+                <span class="text-[16px] ml-3">order</span>
+            </div>
+        </a>
     </div>
 </div>

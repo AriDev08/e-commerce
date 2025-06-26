@@ -140,7 +140,7 @@ $id_produk = $_GET['id'] ?? null;
 
     <div class="flex">
       <form action="proses_checkout.php" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="id_produk" value="<?= htmlspecialchars($id_produk) ?>">
+    
 
         <div class="flex">
           <!-- Custom order -->

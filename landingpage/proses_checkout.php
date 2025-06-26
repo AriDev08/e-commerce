@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
+var_dump($_SESSION['user_id']);
 include "../inc/koneksi.php";
 
 echo '<!DOCTYPE html>

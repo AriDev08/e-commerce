@@ -34,6 +34,12 @@ include '../inc/koneksi.php'; ?>
                 case 'edit_users':
                     include "edit_users.php";
                     break;
+                    case 'input_produk':
+                        include "input.produk.php";
+                        break;
+                        case 'tampil_order':
+                            include "tampil_checkout.php";
+                            break;
                 default:
                     echo "<p>Halaman tidak ditemukan</p>";
                     break;
