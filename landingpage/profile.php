@@ -1,7 +1,6 @@
 <?php
 session_start();
-// nanti koneksinya cocokin
-// include 'koneksi.php'; 
+include '../inc/koneksi.php';
 
 if (!isset($_SESSION['username'])) {
     header("Location: login.php");

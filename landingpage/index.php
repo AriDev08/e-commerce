@@ -1,3 +1,25 @@
+<?php
+$conn = mysqli_connect("localhost", "root", "", "ecommerce");
+
+// Ambil filter dari query string
+$tipe_filters = isset($_GET['tipe']) ? $_GET['tipe'] : [];
+
+// Siapkan WHERE
+$where = '';
+if (!empty($tipe_filters)) {
+  $escaped = array_map(function($t) use ($conn) {
+    return mysqli_real_escape_string($conn, $t);
+  }, $tipe_filters);
+
+  $like = array_map(fn($t) => "tipe LIKE '%$t%'", $escaped);
+  $where = "WHERE " . implode(" OR ", $like);
+}
+
+$result = mysqli_query($conn, "SELECT * FROM produks $where");
+
+// Semua tipe yang tersedia
+$daftar_tipe = ['PHP', 'Next.js', 'Laravel', 'React'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +56,7 @@
                                 $link = ($_SESSION['role'] === 'admin') ? '../dashboard/index.php' : 'profile.php';
                                 echo '
                                 <a href="' . $link . '" class="flex items-center gap-2">
-                                    <img src="landingpage/user.png" alt="User" class="w-8 h-8 rounded-full">
+                                    <img src="user.png" alt="User" class="w-8 h-8 rounded-full">
                                     <span class="text-white">' . htmlspecialchars($_SESSION['username']) . '</span>
                                 </a>';
                             } else {
@@ -86,89 +108,61 @@
     </section>
     <section class="w-full h-screen pt-10">
         <h1 class="text-[40px] ml-10">Our Expertise,</h1>
-        <div class="gap-20 flex mt-5 ml-2 text-[40px] justify-center items-center">
-            <a href="">
-                <div class="bg-[#D4D4D4] w-[305px] h-[100px] rounded-xl p-5 pl-25">Next.js</div>
-            </a>
-            <a href="">
-                <div class="bg-[#D4D4D4] w-[305px] h-[110px] rounded-xl p-5 pl-25">Next.js</div>
-            </a>
-            <a href="">
-                <div class="bg-[#D4D4D4] w-[305px] h-[100px] rounded-xl p-5 pl-25">Next.js</div>
-            </a>
-            <a href="">
-                <div class="bg-[#D4D4D4] w-[305px] h-[100px] rounded-xl p-5 pl-25">Next.js</div>
-            </a>
+        <div class="gap-5 flex flex-wrap justify-center items-center mb-10 text-[20px] font-semibold">
+    <?php foreach ($daftar_tipe as $tipe): ?>
+      <?php
+
+        $isSelected = in_array($tipe, $tipe_filters);
+        $class = $isSelected ? 'bg-[#757575] text-white' : 'bg-[#D4D4D4] text-black';
+
+
+        $newFilters = $tipe_filters;
+
+        if ($isSelected) {
+ 
+          $newFilters = array_filter($newFilters, fn($f) => $f !== $tipe);
+        } else {
+
+          $newFilters[] = $tipe;
+        }
+
+        $query = http_build_query(['tipe' => $newFilters]);
+        $link = '?' . $query;
+      ?>
+      <a href="<?= $link ?>">
+        <div class="w-[180px] h-[70px] rounded-xl p-4 flex justify-center items-center transition duration-200 hover:scale-105 <?= $class ?>">
+          <?= $tipe ?>
         </div>
+      </a>
+    <?php endforeach; ?>
+
+
+    <a href="index.php">
+      <div class="w-[180px] h-[70px] rounded-xl p-4 bg-red-400 text-white flex justify-center items-center hover:bg-red-500 transition duration-200 hover:scale-105">
+        Reset
+      </div>
+    </a>
+  </div>
         <h1 class="text-[40px] ml-10 mt-5">Your <span class="font-bold">Choice</span></h1>
-        <div class="flex gap-20 ml-10">
-            <a href="shopping.php">
-                <div class="w-[305px] h-[281px]">
-                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
-                    <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
-                    <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
-                    <p>RP.xxx,xxx</p>
-                </div>
-            </a>
-            <a href="shopping.php">
-                <div class="w-[305px] h-[281px]">
-                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
-                    <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
-                    <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
-                    <p>RP.xxx,xxx</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="w-[305px] h-[281px]">
-                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
-                    <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
-                    <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
-                    <p>RP.xxx,xxx</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="w-[305px] h-[281px]">
-                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
-                    <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
-                    <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
-                    <p>RP.xxx,xxx</p>
-                </div>
-            </a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+  <?php while($row = mysqli_fetch_assoc($result)) { ?>
+    <a href="checkout.php?id=<?= $row['id'] ?>">
+  <div class="bg-white shadow-md rounded-xl overflow-hidden hover:scale-105 transition duration-300">
+       <img src="/e-commerce/landingpage/uploads/<?= $row['gambar'] ?>"
+             alt="<?= $row['nama_produk'] ?>"
+             class="w-full h-[180px] object-cover">
+
+        <div class="p-4">
+          <h2 class="text-lg font-bold text-gray-800"><?= $row['nama_produk'] ?></h2>
+          <p class="text-sm text-gray-600 truncate"><?= $row['deskripsi'] ?></p>
+          <p class="text-xs mt-1 text-blue-500 italic"><?= $row['tipe'] ?></p>
+          <p class="text-black font-semibold mt-2">Rp<?= number_format($row['harga'], 0, ',', '.') ?></p>
         </div>
-        <div class="flex gap-20 mt-10 ml-10">
-            <a href="">
-                <div class="w-[305px] h-[281px]">
-                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
-                    <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
-                    <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
-                    <p>RP.xxx,xxx</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="w-[305px] h-[281px]">
-                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
-                    <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
-                    <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
-                    <p>RP.xxx,xxx</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="w-[305px] h-[281px]">
-                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
-                    <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
-                    <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
-                    <p>RP.xxx,xxx</p>
-                </div>
-            </a>
-            <a href="">
-                <div class="w-[305px] h-[281px]">
-                    <img class="w-[305px] h-[180px] rounded-xl" src="kucing.jpg" alt="">
-                    <h1 class="text-black text-[24px] font-bold">Nama Template</h1>
-                    <p class="text-black text-[20px]">deskripsi template deskripsi templatedeskripsi template</p>
-                    <p>RP.xxx,xxx</p>
-                </div>
-            </a>
-        </div>
+      </div>
+    </a>
+  <?php } ?>
+</div>
+
     </section>
 
     <section class="w-full h-screen bg-gradient-to-b from-[#B1B1B1] to-[#757575]  mt-50">
