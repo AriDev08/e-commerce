@@ -1,3 +1,6 @@
+<?php
+$id_produk = $_GET['id'] ?? null;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,9 +55,11 @@
             <h1 class="text-[40px] font-bold">Nama Template</h1>
             <p class="text-[24px]">deskripsi template deskripsi template</p>
             <h2 class="pt-4 text-[24px]">- Rp1.000.000,00</h2>
+            <a href="checkout.php?id=<?= $id_produk ?>">
             <button class="mt-86 bg-gray-900/20 hover:bg-gray-900/50 text-white font-semibold py-4 px-8 rounded-xl transition w-full">
                 <h1 class="text-black bold underline">Checkout</h1>
             </button>
+            </a>
             </div>
         </div>
         </section>

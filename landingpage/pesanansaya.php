@@ -60,12 +60,12 @@ $result = mysqli_query($conn, $query);
                 <form method="POST" action="selesai.php">
                   <input type="hidden" name="id" value="<?= $row['id'] ?>">
                   <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-sm" type="submit">
-                    Tandai Selesai
+                   Selesai
                   </button>
                 </form>
               <?php else: ?>
                 <p class="text-green-600 font-semibold">
-                  <?= $row['status'] === 'selesai' ? ':heavy_check_mark: Telah Selesai' : '-' ?>
+                  <?= $row['status'] === 'selesai' ? 'Telah Selesai' : '-' ?>
                 </p>
               <?php endif; ?>
             </div>

@@ -145,24 +145,27 @@ $daftar_tipe = ['PHP', 'Next.js', 'Laravel', 'React'];
     </a>
   </div>
         <h1 class="text-[40px] ml-10 mt-5">Your <span class="font-bold">Choice</span></h1>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
-  <?php while($row = mysqli_fetch_assoc($result)) { ?>
-    <a href="checkout.php?id=<?= $row['id'] ?>">
-  <div class="bg-white shadow-md rounded-xl overflow-hidden hover:scale-105 transition duration-300">
-       <img src="/e-commerce/landingpage/uploads/<?= $row['gambar'] ?>"
-             alt="<?= $row['nama_produk'] ?>"
-             class="w-full h-[180px] object-cover">
+        <div class="h-[500px] overflow-y-auto">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <?php while($row = mysqli_fetch_assoc($result)) { ?>
+      <a href="shopping.php?id=<?= $row['id'] ?>">
+        <div class="bg-white shadow-md rounded-xl overflow-hidden hover:scale-105 transition duration-300">
+          <img src="/e-commerce/landingpage/uploads/<?= $row['gambar'] ?>"
+               alt="<?= $row['nama_produk'] ?>"
+               class="w-full h-[180px] object-cover">
 
-        <div class="p-4">
-          <h2 class="text-lg font-bold text-gray-800"><?= $row['nama_produk'] ?></h2>
-          <p class="text-sm text-gray-600 truncate"><?= $row['deskripsi'] ?></p>
-          <p class="text-xs mt-1 text-blue-500 italic"><?= $row['tipe'] ?></p>
-          <p class="text-black font-semibold mt-2">Rp<?= number_format($row['harga'], 0, ',', '.') ?></p>
+          <div class="p-4">
+            <h2 class="text-lg font-bold text-gray-800"><?= $row['nama_produk'] ?></h2>
+            <p class="text-sm text-gray-600 truncate"><?= $row['deskripsi'] ?></p>
+            <p class="text-xs mt-1 text-blue-500 italic"><?= $row['tipe'] ?></p>
+            <p class="text-black font-semibold mt-2">Rp<?= number_format($row['harga'], 0, ',', '.') ?></p>
+          </div>
         </div>
-      </div>
-    </a>
-  <?php } ?>
+      </a>
+    <?php } ?>
+  </div>
 </div>
+
 
     </section>
 
