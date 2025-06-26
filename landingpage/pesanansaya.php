@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "koneksi.php";
+include "../inc/koneksi.php";
 
 
 if (!isset($_SESSION['user_id'])) {
@@ -18,7 +18,7 @@ JOIN produks ON orders.product_id = produks.id
 WHERE orders.user_id = $id_user
 ORDER BY orders.id DESC";
 
-$result = mysqli_query($koneksi, $query);
+$result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>

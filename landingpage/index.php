@@ -17,7 +17,6 @@ if (!empty($tipe_filters)) {
 
 $result = mysqli_query($conn, "SELECT * FROM produks $where");
 
-// Semua tipe yang tersedia
 $daftar_tipe = ['PHP', 'Next.js', 'Laravel', 'React'];
 ?>
 <!DOCTYPE html>
@@ -46,10 +45,12 @@ $daftar_tipe = ['PHP', 'Next.js', 'Laravel', 'React'];
                 </li>
                 <li>
                     <ul class="flex items-center gap-9">
+                        <a href="pesanansaya.php">
                         <li>
                             <img class="w-[41px] h-[41px]" src="shopping-chart.png" alt="Cart" />
                         </li>
                         <li>
+                        </a>
                             <?php
                             session_start();
                             if (isset($_SESSION['username'])) {
