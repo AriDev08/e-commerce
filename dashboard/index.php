@@ -26,8 +26,14 @@
         if (isset($_GET['page'])) {
             $page = $_GET['page'];
             switch ($page) {
-                case 'users':
+                case 'input_users':
                     include "input_users.php";
+                    break;
+                case 'tabel_users':
+                    include "tabel_users.php";
+                    break;
+                case 'edit_users':
+                    include "edit_users.php";
                     break;
                 default:
                     echo "<p>Halaman tidak ditemukan</p>";

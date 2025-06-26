@@ -10,12 +10,17 @@
                 <span class="text-[16px] ml-3">Dashboard</span>
             </div>
         </a>
-        <a href="?page=users" class="block mb-3">
+        <a href="?page=input_users" class="block mb-3">
             <div class="py-2 flex items-center rounded-md px-3 hover:bg-gray-200">
                 <i class="bi bi-database-add text-gray-700"></i>
                 <span class="text-[16px] ml-3">Tambah Users</span>
             </div>
         </a>
-        <hr class="border-gray-300 my-3">
+         <a href="?page=tabel_users" class="block mb-3">
+            <div class="py-2 flex items-center rounded-md px-3 hover:bg-gray-200">
+                <i class="bi bi-database-add text-gray-700"></i>
+                <span class="text-[16px] ml-3">Tabel Users</span>
+            </div>
+        </a>
     </div>
 </div>
