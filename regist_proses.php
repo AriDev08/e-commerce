@@ -1,5 +1,5 @@
 <?php
-include 'inc/koneksi.php';
+// include 'inc/koneksi.php';
 
 $username = strtolower(trim($_POST['username']));
 $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
