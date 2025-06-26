@@ -1,24 +1,15 @@
-<?php 
+<?php
 include 'inc/koneksi.php';
 
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+$username = strtolower(trim($_POST['username']));
+$password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
+$no_telp = $_POST['no_tlp'];
+$role = 'customer'; 
 
-    if (empty($username) || empty($password)) {
-        echo "Username atau password tidak boleh kosong!";
-    } else {
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+$query = "INSERT INTO users (username, password, no_tlp, role)
+          VALUES ('$username', '$password', '$no_telp', '$role')";
+mysqli_query($conn, $query);
 
-        $query = "INSERT INTO users (username, password) VALUES ('$username', '$passwordHash')";
-        $result = mysqli_query($conn, $query);
-
-        if ($result) {
-            header("Location: register.php?success=1");
-            exit;
-        } else {
-            echo "Terjadi kesalahan: " . mysqli_error($conn);
-        }
-    }
-}
+header("Location: ../landingpage/login.php");
+exit();
 ?>
